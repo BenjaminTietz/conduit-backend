@@ -2,6 +2,11 @@
 
 set -e
 
+echo "Waiting for database..."
+until nc -z db 5432; do
+  sleep 2
+done
+
 echo "Running migrations..."
 python manage.py migrate
 
