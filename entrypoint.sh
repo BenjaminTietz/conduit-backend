@@ -8,6 +8,7 @@ until nc -z db 5432; do
 done
 
 echo "Running migrations..."
+python manage.py makemigrations
 python manage.py migrate
 
 echo "Collecting static files..."
