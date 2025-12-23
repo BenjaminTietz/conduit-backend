@@ -7,6 +7,8 @@ from .views import (
     CommentsListCreateAPIView, CommentsDestroyAPIView, TagListAPIView
 )
 
+app_name = "articles"  
+
 router = DefaultRouter(trailing_slash=False)
 router.register(r'articles', ArticleViewSet)
 
